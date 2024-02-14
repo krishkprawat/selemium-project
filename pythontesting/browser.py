@@ -15,3 +15,4 @@ driver.forward() #forward the url
 print(driver.title)
 print(driver.current_url)
 driver.close()
+
