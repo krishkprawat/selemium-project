@@ -16,15 +16,17 @@ dropdown_element=driver.find_element(By.ID,"exampleFormControlSelect1")
 dropdown=Select(dropdown_element)
 dropdown.select_by_visible_text("Male") # this is by providing the value
 #dropdown.select_by_index(0) # this is select  by index
-driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector locator
-#driver.find_element(By.XPATH,"//input[@value=option1]").click() #xpath locator
+#driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector locator
+driver.find_element(By.XPATH,"//input[@value='option1']").click() #xpath locator
 
 #last submit button
 driver.find_element(By.CSS_SELECTOR,"input[value=Submit]").click()
 driver.find_element(By.CSS_SELECTOR,".ng-pristine ").send_keys("kpbhai")
 
 message= driver.find_element(By.CSS_SELECTOR,".alert").text
-assert "sucess!." in message #this is assertion to check after sucess the mesage contains success text or not.
+assert "success" in message #this is assertion to check after sucess the mesage contains success text or not.
+
+driver.find_element(By.XPATH, "(//input[@type='text'])[3]").clear() #3 means index 3 - if three input box have same attribute then use this.
 
 
 
