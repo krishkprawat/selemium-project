@@ -23,6 +23,10 @@ driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector
 driver.find_element(By.CSS_SELECTOR,"input[value=Submit]").click()
 driver.find_element(By.CSS_SELECTOR,".ng-pristine ").send_keys("kpbhai")
 
+message= driver.find_element(By.CSS_SELECTOR,".alert").text
+assert "sucess!." in message #this is assertion to check after sucess the mesage contains success text or not.
+
+
 
 
 input("enter any key to close the browser") #this i added so tha browser cannot stop immediately
