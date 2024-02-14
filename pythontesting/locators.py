@@ -16,7 +16,11 @@ dropdown_element=driver.find_element(By.ID,"exampleFormControlSelect1")
 dropdown=Select(dropdown_element)
 dropdown.select_by_visible_text("Male") # this is by providing the value
 #dropdown.select_by_index(0) # this is select  by index
-#driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector locator
-driver.find_element(By.XPATH,"//input[@value=option1]").click() #xpath locator
+driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector locator
+#driver.find_element(By.XPATH,"//input[@value=option1]").click() #xpath locator
+
+#last submit button
+driver.find_element(By.CSS_SELECTOR,"input[value=Submit]").click()
+
 input("enter any key to close the browser") #this i added so tha browser cannot stop immediately
 
