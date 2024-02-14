@@ -21,6 +21,9 @@ driver.find_element(By.CSS_SELECTOR,"input[value=option2]").click() #cssselector
 
 #last submit button
 driver.find_element(By.CSS_SELECTOR,"input[value=Submit]").click()
+driver.find_element(By.CSS_SELECTOR,".ng-pristine ").send_keys("kpbhai")
+
+
 
 input("enter any key to close the browser") #this i added so tha browser cannot stop immediately
 
