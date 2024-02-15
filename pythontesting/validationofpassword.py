@@ -26,6 +26,3 @@ else:
 
 input("enter any key to close the browser") #this i added so tha browser cannot stop immediately
 
-
-input("enter any key to close the browser") #this i added so tha browser cannot stop immediately
-
