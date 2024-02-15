@@ -30,5 +30,5 @@ wait= WebDriverWait(driver,10)
 
 wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR,".alert-danger")))
 alertmessage=driver.find_element(By.CSS_SELECTOR,".alert-danger").text
-#print(alertmessage)
+print(alertmessage)
 input("insert any  key to stop")
