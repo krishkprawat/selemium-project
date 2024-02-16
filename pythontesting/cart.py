@@ -8,17 +8,20 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 service_obj = Service()
 driver = webdriver.Chrome(service=service_obj)
-
+driver.implicitly_wait(2)
 driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
-
-driver.find_element(By.CSS_SELECTOR, "input[class=search-keyword]").send_keys("roo")
+driver.find_element(By.CSS_SELECTOR, "input[type='search']").send_keys("roo")
 time.sleep(3)
-
-#gives a list, parent to child --- div to div
 results = driver.find_elements(By.XPATH, "//div[@class='products']/div")
-
-#loop to click all buttons together
 for result in results:
-    result.find_element(By.XPATH, "div/button").click() #here again, traverse in child element div to button.
+    result.find_element(By.XPATH, "div/button").click()
+driver.find_element(By.XPATH, "//img[@alt='Cart']").click()
+driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
+# starts a new page
+driver.find_element(By.CSS_SELECTOR, "input[class='promoCode]").send_keys("rahulshettyacademy")
+driver.find_element(By.CSS_SELECTOR, "button[class=promoBtn]").click()
+wait = WebDriverWait(driver, 10)
+wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "span[class='promoInfo']")))
+print(driver.find_element(By.CSS_SELECTOR, ".promoInfo").text)
 
 input("insert any  key to stop")
