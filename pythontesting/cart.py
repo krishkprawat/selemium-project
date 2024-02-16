@@ -33,17 +33,15 @@ wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "sp
 alert = driver.find_element(By.CSS_SELECTOR, ".promoInfo").text
 assert "Code applied" in alert
 
-wait = WebDriverWait(driver, 10)
-wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "span[class='promoInfo]")))
-discount=driver.find_element(By.CSS_SELECTOR, "span[class='discountPerc']").text
-discount_amount=driver.find_element(By.CSS_SELECTOR,".discountAmt")
-def calculate(total,discount):
-    discount_value= (total*discount)/100
-    new=total-discount_value
-    return new
+# Assignment 2: The value is in decimal hence converted value to float
+totalAfterDis = float(driver.find_element(By.XPATH, "//span[@class='discountAmt']").text)
+assert totalAfterDis < total
+# dis_Perc= driver.find_element(By.XPATH,"//span[@class='discountAmt']").text
+# dis_Perc.replace("%", "")
+# dis_value = (total* dis_Perc)/100
+# assert totalAfterDis == total - dis_value
+print(dis_value)
 
-
-assert new == discount_amount
 
 input("insert any  key to stop")
 
