@@ -14,11 +14,11 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 driver.find_element(By.CSS_SELECTOR, "input[class=search-keyword]").send_keys("roo")
 time.sleep(3)
 
-#gives a list
+#gives a list, parent to child --- div to div
 results = driver.find_elements(By.XPATH, "//div[@class='products']/div")
 
 #loop to click all buttons together
 for result in results:
-    result.find_element(By.XPATH, "div/button").click()
+    result.find_element(By.XPATH, "div/button").click() #here again, traverse in child element div to button.
 
 input("insert any  key to stop")
