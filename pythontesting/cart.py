@@ -18,8 +18,10 @@ for result in results:
 driver.find_element(By.XPATH, "//img[@alt='Cart']").click()
 driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
 # starts a new page
-driver.find_element(By.CSS_SELECTOR, "input[class='promoCode]").send_keys("rahulshettyacademy")
-driver.find_element(By.CSS_SELECTOR, "button[class=promoBtn]").click()
+
+driver.find_element(By.XPATH, "//input[@class='promoCode']").send_keys("rahulshettyacademy")
+#driver.find_element(By.CSS_SELECTOR, "input[class='promoCode]").send_keys("rahulshettyacademy")
+driver.find_element(By.XPATH, "//button[@class='promoBtn']").click()
 wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "span[class='promoInfo']")))
 print(driver.find_element(By.CSS_SELECTOR, ".promoInfo").text)
