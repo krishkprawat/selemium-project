@@ -25,8 +25,8 @@ for price in prices:
 print(sum)
 total = int(driver.find_element(By.CSS_SELECTOR, ".totAmt").text)
 assert total == sum
-driver.find_element(By.XPATH, "//input[@class='promoCode']").send_keys("rahulshettyacademy")
-# driver.find_element(By.CSS_SELECTOR, "input[class='promoCode]").send_keys("rahulshettyacademy")
+#driver.find_element(By.XPATH, "//input[@class='promoCode']").send_keys("rahulshettyacademy")
+driver.find_element(By.CSS_SELECTOR, "input[class='promoCode']").send_keys("rahulshettyacademy")
 driver.find_element(By.XPATH, "//button[@class='promoBtn']").click()
 wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "span[class='promoInfo']")))
@@ -40,7 +40,7 @@ assert totalAfterDis < total
 # dis_Perc.replace("%", "")
 # dis_value = (total* dis_Perc)/100
 # assert totalAfterDis == total - dis_value
-print(dis_value)
+#print(dis_value)
 
 
 input("insert any  key to stop")
