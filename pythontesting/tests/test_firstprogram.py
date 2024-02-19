@@ -3,3 +3,7 @@
 
 def test_one():
     print("hello buddy")
+
+def test_two():
+    print("hey devops qa")
+    
