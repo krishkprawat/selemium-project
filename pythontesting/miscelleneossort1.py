@@ -8,6 +8,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 service_obj = Service()
 driver = webdriver.Chrome(service=service_obj)
+chrome_option= webdriver.ChromeOptions()
+# chrome_option.add_argument("headless")
 driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers")
 browserlist= driver.find_element(By.XPATH,"//span[text()='Veg/fruit name']").click()
 allveg=driver.find_elements(By.XPATH,"//tr/td[1]")
