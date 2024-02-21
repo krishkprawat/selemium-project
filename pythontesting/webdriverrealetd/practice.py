@@ -16,11 +16,14 @@ dropdown = Select(driver.find_element(By.CSS_SELECTOR, "#dropdown-class-example"
 dropdown.select_by_value("option1")
 
 # table sum of values integer
-values = driver.find_elements(By.XPATH, "//table[@id='product']/tbody/tr")
-sum=0
-for value in range(1,10):
-    amount=int(driver.find_element(By.XPATH,"./td[4]").text)
-    sum = sum + amount
+
+values = driver.find_elements(By.XPATH, "//div[@class='tableFixHead']//tbody/tr/td[4]")
+sum = 0
+# for value in range(1, 10):
+for value in values:
+    # amount = int(driver.find_element(By.XPATH, "./td[4]").text)
+    sum = sum + int(value.text)
 
 print(sum)
 input("enter any keyword to stop the screen")
+#dd
