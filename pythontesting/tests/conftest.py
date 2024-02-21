@@ -8,3 +8,7 @@ def test_global():
     yield
     print("i am secind from gloval fixture")
 
+
+@pytest.fixture(params=[("krishna","goes","to"),("rawat","ji"),("devops","qa")])
+def crossBrowser(request):
+    return request.param
