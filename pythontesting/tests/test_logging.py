@@ -1,19 +1,15 @@
 import logging
-logger =logging.getLogger(__name__)
+def test_logging():
+    logger = logging.getLogger(__name__)
 
-logger.debug("this is a debug message")
-logger.info("this is info msg")
-logger.warning("this is warning msg")
-logger.error("error msg this is")
-logger.critical("critical msg this is")
+    fileHandler = logging.FileHandler('logfile.log')
+    formatter = logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s")
+    fileHandler.setFormatter(formatter)
 
-filehandler=logging.FileHandler("logfile.log")
-logger.addHandler(filehandler)
-#add formatter and connect formatter with file handler
-formatter=logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s")
-filehandler.setFormatter(formatter)
-
-
-
-
-
+    logger.addHandler(fileHandler)  # filehandler object
+    logger.setLevel(logging.DEBUG)
+    logger.debug("A debug statement is printed")
+    logger.info("Information Messages this is ")
+    logger.warning("Warning Messages this is")
+    logger.error("this is Error Messages")
+    logger.critical("this i skp Critical Issues")

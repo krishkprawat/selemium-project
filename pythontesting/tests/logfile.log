@@ -1,0 +1,10 @@
+2024-02-21 18:44:05,624 :DEBUG :tests.test_logging :A debug statement is printed
+2024-02-21 18:44:05,624 :INFO :tests.test_logging :Information Messages
+2024-02-21 18:44:05,624 :WARNING :tests.test_logging :Warning Messages
+2024-02-21 18:44:05,624 :ERROR :tests.test_logging :Error Messages
+2024-02-21 18:44:05,624 :CRITICAL :tests.test_logging :Critical Issues
+2024-02-21 18:46:51,624 :DEBUG :tests.test_logging :A debug statement is printed
+2024-02-21 18:46:51,624 :INFO :tests.test_logging :Information Messages this is 
+2024-02-21 18:46:51,624 :WARNING :tests.test_logging :Warning Messages this is
+2024-02-21 18:46:51,625 :ERROR :tests.test_logging :this is Error Messages
+2024-02-21 18:46:51,625 :CRITICAL :tests.test_logging :this i skp Critical Issues
