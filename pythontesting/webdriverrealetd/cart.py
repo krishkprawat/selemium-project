@@ -35,12 +35,16 @@ assert "Code applied" in alert
 
 # Assignment 2: The value is in decimal hence converted value to float
 totalAfterDis = float(driver.find_element(By.XPATH, "//span[@class='discountAmt']").text)
-assert totalAfterDis < total
-# dis_Perc= driver.find_element(By.XPATH,"//span[@class='discountAmt']").text
-# dis_Perc.replace("%", "")
-# dis_value = (total* dis_Perc)/100
-# assert totalAfterDis == total - dis_value
-#print(dis_value)
+#print(totalAfterDis)
+dis_Perc= driver.find_element(By.XPATH,"//span[@class='discountPerc']").text
+#print(dis_Perc)
+x=int(dis_Perc[:-1])
+#print(x)
+dis_value = (total*x)/100
+amount_After_discount= total - dis_value
+assert totalAfterDis == amount_After_discount
+print(amount_After_discount)
+
 
 
 input("insert any  key to stop")
